@@ -1,0 +1,40 @@
+
+## `.gitignore`
+
+For your project, I'd use:
+
+```gitignore
+# Build output
+build/*
+
+# Keep the build directory
+!build/.gitkeep
+
+# Raylib generated build files
+external/raylib/build/
+
+# Compiled object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+
+# Debugging
+*.log
+core
+core.*
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*~
