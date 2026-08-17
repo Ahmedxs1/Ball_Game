@@ -26,9 +26,12 @@ void draw_score(Score* s)
     const int posX = 100;
     const int posY = 100;
     const Color color = WHITE;
-    const char* text = "Score";
 
-
-    DrawText(text, posX, posY, fontSize, color);
-
+    DrawText(
+        TextFormat("%d : %d", s->p1_score, s->p2_score),
+        posX,
+        posY,
+        fontSize,
+        WHITE
+    );
 }

@@ -1,12 +1,15 @@
 #include "ball.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-void init_ball(Ball* b, Vector2 initial_pos, int size, int speed, Color color)
+int One_or_minusOne();
+
+void init_ball(Ball* b, int size, int speed, Color color)
 {
-    b->pos = initial_pos;
+    b->pos = (Vector2){GetScreenWidth()/2, GetScreenHeight()/2};
     b->size = size;
     b->color = color;
-    b->dir = (Vector2){1 , 1};
+    b->dir = (Vector2){One_or_minusOne() , One_or_minusOne()};
     b->speed = speed;
 }
 
@@ -27,7 +30,13 @@ void update_ball(Ball* b)
 
 void reset_ball(Ball* b)
 {
-    b->pos = (Vector2){100, 100};
-    b->dir = (Vector2){1 , 1};
+    b->pos = (Vector2){GetScreenWidth()/2, GetScreenHeight()/2};
+    b->dir = (Vector2){One_or_minusOne() , One_or_minusOne()};
     printf("Ball resset");
+}
+
+
+int One_or_minusOne()
+{
+    return (rand() % 2) ? 1 : -1;
 }

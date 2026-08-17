@@ -24,7 +24,7 @@ int main(void)
 
 
     Ball ball;
-    init_ball(&ball, INITIAL_POS, BALL_SIZE, BALL_SPEED, BALL_COLOR);
+    init_ball(&ball, BALL_SIZE, BALL_SPEED, BALL_COLOR);
 
     Scene scene;
     init_scene(&scene);
