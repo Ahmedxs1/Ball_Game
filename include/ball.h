@@ -1,16 +1,18 @@
-#include "raylib.h"
-
 #ifndef BALL_H
 #define BALL_H
 
-typedef struct{
+#include "raylib.h"
+
+typedef struct {
     Vector2 pos;
-    Vector2 dir;
+
+    float dir;      
 
     int speed;
-
     int size;
     Color color;
+
+    float timer;
 
 } Ball;
 

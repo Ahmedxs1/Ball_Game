@@ -8,7 +8,7 @@
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 800;
 const char* WINDOW_TITLE = "BALL GAME";
-const int FPS = 300;
+const int FPS = 200;
 const Color BG_COLOR = BLACK;
 
 const int BALL_SIZE = 20;

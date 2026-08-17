@@ -1,16 +1,26 @@
 #include "ball.h"
-#include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-int One_or_minusOne();
+float random_direction(void)
+{
+    return (float)(rand() % 360);
+}
 
 void init_ball(Ball* b, int size, int speed, Color color)
 {
-    b->pos = (Vector2){GetScreenWidth()/2, GetScreenHeight()/2};
+    b->pos = (Vector2){
+        GetScreenWidth() / 2.0f,
+        GetScreenHeight() / 2.0f
+    };
+
     b->size = size;
     b->color = color;
-    b->dir = (Vector2){One_or_minusOne() , One_or_minusOne()};
     b->speed = speed;
+
+    b->dir = random_direction();
+    b->timer = 0.0f;
 }
 
 void draw_ball(Ball* b)
@@ -20,23 +30,29 @@ void draw_ball(Ball* b)
 
 void update_ball(Ball* b)
 {
-    const float dt = GetFrameTime();
+    float dt = GetFrameTime();
+    b->timer += dt;
 
+    const int SPEED_INCREMENT = 20;
+    const int MAX_SPEED = 1500;
 
-    b->pos.x += (b->speed * b->dir.x) * dt;
-    b->pos.y += (b->speed * b->dir.y) * dt;
+    if (b->timer > 5.0 && b->speed < MAX_SPEED){
+        b->speed += SPEED_INCREMENT;
+        b->timer = 0.0f;
+    }
+
+    float radians = b->dir * DEG2RAD;
+
+    b->pos.x += cosf(radians) * b->speed * dt;
+    b->pos.y += sinf(radians) * b->speed * dt;
 }
-
 
 void reset_ball(Ball* b)
 {
-    b->pos = (Vector2){GetScreenWidth()/2, GetScreenHeight()/2};
-    b->dir = (Vector2){One_or_minusOne() , One_or_minusOne()};
-    printf("Ball resset");
-}
+    b->pos = (Vector2){
+        GetScreenWidth() / 2.0f,
+        GetScreenHeight() / 2.0f
+    };
 
-
-int One_or_minusOne()
-{
-    return (rand() % 2) ? 1 : -1;
+    b->dir = random_direction();
 }
