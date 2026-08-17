@@ -28,6 +28,11 @@ void init_player(Player *p, PlayerNum num, Color color)
 
 void update_player(Player *p)
 {
+
+    if (p->player_num == PLAYER_TWO){
+        p->rec.x = (float)GetScreenWidth() - p->width - p->margin;
+    }
+
     const float dt = GetFrameTime();
     const int PLAYER_SPEED = 600;
     const int VERTCAL_MARGIN = 30;

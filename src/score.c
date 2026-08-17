@@ -23,8 +23,8 @@ void handle_score(Score* s, Ball* b)
 void draw_score(Score* s)
 {
     const int fontSize = 20;
-    const int posX = 100;
-    const int posY = 100;
+    const int posX = 375;
+    const int posY = 60;
     const Color color = WHITE;
 
     DrawText(

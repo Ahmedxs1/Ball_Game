@@ -18,7 +18,7 @@ const int BALL_SPEED = 300;
 
 int main(void)
 {
-    // SetConfigFlags(FLAG_WINDOW_RESIZABLE); 
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE); 
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
     SetTargetFPS(FPS);
 
