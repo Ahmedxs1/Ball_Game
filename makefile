@@ -8,7 +8,8 @@ SRC = src/main.c \
 		src/ball.c	\
 		src/scene.c \
 		src/collision.c \
-		src/player.c
+		src/player.c	\
+		src/score.c
 
 
 LDFLAGS = -L./external/raylib/build/raylib

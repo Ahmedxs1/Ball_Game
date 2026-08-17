@@ -22,7 +22,7 @@ void init_player(Player *p, PlayerNum num, Color color)
         x,
         100.0f,
         p->width,
-        400
+        (int)(GetScreenHeight() * 0.4f)
     };
 }
 

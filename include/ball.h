@@ -14,8 +14,9 @@ typedef struct{
 
 } Ball;
 
-void init_ball(Ball* b, Vector2 initial_pos, int size, Color color);
+void init_ball(Ball* b, Vector2 initial_pos, int size, int speed, Color color);
 void draw_ball(Ball* b);
 void update_ball(Ball* b);
+void reset_ball(Ball* b);
 
 #endif

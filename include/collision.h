@@ -8,4 +8,4 @@
 void handle_ball_panel_collision(Scene* s, Ball* b);
 void handle_ball_player_collision(Player* p, Ball* b);
 
-#endif COLLISION_H
+#endif 
